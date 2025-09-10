@@ -11,7 +11,7 @@ const selectListContainer = document.getElementById("select_list_container");
 
 //버턴 누를시 페이지 전환
 homeBtn.addEventListener('click', function() {
-    location.href = 'index.html';
+    location.href = 'home.html';
 });
 
 
