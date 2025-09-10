@@ -1,0 +1,51 @@
+#event_container {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;           /* 넘치면 다음 줄로 */
+    flex-direction: row;       /* 가로로 배열 */
+    align-items: flex-start;    /* 위쪽 정렬 */
+    gap: 20px;                 /* 요소 사이 간격 */
+    justify-content: flex-start; /* 왼쪽부터 정렬 */
+}
+
+.event_detail_container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 8px 0;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    position: relative; /* event_end_label 위치 조정을 위해 추가 */
+}
+
+.event_image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.event_end {
+    background: rgba(150,150,150,1);
+    /* 아래 추가 */
+    filter: grayscale(0.8) ; /* 모든 내용 회색빛으로 */
+}
+
+
+.event_end_label {
+    color: white;
+    background-color: darkred;
+    font-weight: bold;
+    font-size: 5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 4px 12px;
+    border-radius: 8px;
+    z-index: 2;
+
+    filter: none; /* 흑백 필터 무시 */
+}

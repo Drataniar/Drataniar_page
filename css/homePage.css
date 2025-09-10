@@ -1,0 +1,47 @@
+
+#video_container {
+    position: relative;
+    width: 100vw; /* 비디오 크기에 맞게 */
+}
+
+#mute_btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    margin: 8px;
+    width: 120px;
+    height: 60px;
+    font-size: 33px;
+}
+
+.home_video {
+    width: 100vw; /* 비디오 크기에 맞게 */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+
+#site_link_container {
+    background-color: grey;
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;   /* 가로 중앙 정렬 */
+    align-items: center;       /* 세로 중앙 정렬 */
+    gap: 40px;                 
+}
+
+.site_link{
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 8px 24px;    /* 좌우 여백을 넉넉히 추가 */
+    display: inline-block; /* 패딩 적용을 위해 */
+    border-radius: 10px;   /*  모서리 둥글게 */
+    box-sizing: border-box;
+}

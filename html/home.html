@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drataniar</title>
+    <link rel="stylesheet" href="../css/topButton.css">
+    <link rel="stylesheet" href="../css/homePage.css">
+</head>
+<body>
+    <head class="head">
+        <div id="top_all_container">
+            <div class="top_container">
+                <h1 id="my_name">Drataniar</h1>
+                <img id="ark_logo" src="https://webusstatic.yo-star.com/arknights-kr/arknights-kr-website/main/arknights-kr-website/assets/logo-7510becf.png">
+                <div id="my_picture_container">
+                    <img class="my_picture" id="frost_pic" src="../img/선 없이 그린 서리별.png" alt="서리별">
+                    <img class="my_picture" id="red_pic" src="../img/펜 사고 그린 레드 2.png" alt="레드">
+                    <img class="my_picture" id="tex_pic" src="../img/텍사스와 엑시아2.png" alt="텍사스와 엑시아">
+                </div>
+            </div>
+            
+            <div class="menu_container">
+                <button class="top_btn" id="home_btn">홈</button>
+                <button class="top_btn" id="character_btn">캐릭터</button>
+                <button class="top_btn" id="video_btn">영상</button>
+                <button class="top_btn" id="goods_btn">굿즈</button>
+                <button class="top_btn" id="event_board_btn">현재 진행중인 이벤트</button>
+                <button class="top_btn" id="recruitment_calculator_btn">공개 모집 계산기</button>
+            </div>
+            <div id="select_list_container">
+                <!-- 선택 버턴들 목록이 여기 들어감-->
+
+            </div>
+        </div>
+    </head>
+    
+    <div id="video_container">
+        <button id="mute_btn" onclick="ChangeVideoSound()">Mute</button>
+        <video class="home_video" id="main_pv1"  muted autoplay loop playsinline type="video/mp4" 
+        src="https://webusstatic.yo-star.com/web-cms-prod/upload/content/2025/07/10/vth_x5ei.mp4">
+
+        </video>
+    </div>
+    <div id="site_link_container">
+        <a class="site_link" href="https://arknights.kr/">명일방주 공식 사이트</a>
+        <a class="site_link" href="https://cafe.naver.com/arknightskor">명일방주 공식 카페</a>
+        <a class="site_link" href="https://x.com/ArknightsKorea">명일방주 공식 X</a>
+        <a class="site_link" href="https://www.youtube.com/channel/UCnnbUv4urnbWgb_lgGUfeBw">명일방주 공식 유튜브</a>
+        <a class="site_link" href="https://prts.wiki/w/%E9%A6%96%E9%A1%B5">PRTS WIKI</a>
+    </div>
+
+    <footer>
+        <p>도움 받은 사이트</p>
+        <a>prts wiki</a>
+        <a>명일방주 공식 카페</a>
+        <a>명일방주 공식 유튜브</a>
+        <a href="https://github.com/ArknightsAssets/ArknightsAssets2/tree/cn">github에 데이터 정리하신 분</a>
+    </footer>
+
+    <script src="../js/topButton.js"></script>
+    <script src="../js/homPage.js"></script>
+</body>
+</html>

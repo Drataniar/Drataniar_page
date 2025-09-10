@@ -1,0 +1,125 @@
+
+#characterBtnList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+#role_big_div {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center; /* 내부 role_container를 가로 중앙 정렬 */
+}
+
+.role_container {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    align-items: center;
+
+}
+.role_container:hover {
+    background-color: lightcyan; /* Hover 시 배경색 변경 */
+    cursor: pointer; /* Hover 시 커서 변경 */
+    transform: scale(1.1); /* 크기 1.5배 확대 */
+    transition: transform 0.2s; /* 부드럽게 확대 */
+}
+
+.button_clicked {
+    background-color: lightgray !important; /* 클릭된 버튼 배경색 변경 */
+}
+
+#rarityBtnList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 0;
+    background-color: grey;
+    align-items: center;
+    justify-content: center; /* 내부 role_container를 가로 중앙 정렬 */
+}
+
+.rarity_btn_container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center; /* 내부 role_container를 가로 중앙 정렬 */
+    width: 100%;
+    padding: auto;
+}
+
+.rarity_btn{
+    height: 60%;
+    padding: 8px 16px;
+    margin: 0;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    background-color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+.rarity_btn:hover{
+    background-color: lightcyan; /* Hover 시 배경색 변경 */
+    cursor: pointer; /* Hover 시 커서 변경 */
+    transform: scale(1.1); /* 크기 1.5배 확대 */
+    transition: transform 0.2s; /* 부드럽게 확대 */
+}
+
+.character_btn_container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center; /* 내부 role_container를 가로 중앙 정렬 */
+    width: 100%;
+    flex-wrap: wrap;           /* 넘치면 다음 줄로 */
+}
+
+.character_name_btn {
+    padding: 8px 16px;
+    margin: 0;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    background: #f8f8f8;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.character_name_btn:hover{
+    background-color: lightcyan; /* Hover 시 배경색 변경 */
+    cursor: pointer; /* Hover 시 커서 변경 */
+    transform: scale(1.1); /* 크기 1.5배 확대 */
+    transition: transform 0.2s; /* 부드럽게 확대 */
+}
+
+#clear_button{
+    height: 80%;
+    background-color: rgb(241, 132, 132);
+}
+#clear_button:hover{
+    background-color: rgb(255, 99, 71);
+    cursor: pointer; /* Hover 시 커서 변경 */
+    transform: scale(1.1); /* 크기 1.5배 확대 */
+    transition: transform 0.2s; /* 부드럽게 확대 */
+}
+
+#characterImg {
+    width: 100%;
+
+    background-color: lightgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:  auto; /* 좌우 자동 가운데 정렬 */
+}
+
+.character_image{
+
+    max-width: 700px;
+}

@@ -1,0 +1,20 @@
+#clear_button{
+    background-color: rgb(241, 132, 132);
+}
+
+.btn:hover{
+    background-color: lightcyan; /* Hover 시 배경색 변경 */
+    cursor: pointer; /* Hover 시 커서 변경 */
+    transform: scale(1.1); /* 크기 1.5배 확대 */
+    transition: transform 0.2s; /* 부드럽게 확대 */
+}
+
+#video_search_container{
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end; /* 오른쪽에 붙이기 */
+    gap: 10px;
+    align-items: center;
+    box-sizing: border-box;
+    padding-right: 30px;
+}
