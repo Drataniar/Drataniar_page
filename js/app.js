@@ -7,13 +7,16 @@ app.use(express.json());
 
 app.listen(3000);
 
+// 정적 파일 제공 (html, css, js, img)
+app.use(express.static(__dirname + '/../html'));
+app.use(express.static(__dirname + '/../css'));
+app.use(express.static(__dirname + '/../js'));
+app.use(express.static(__dirname + '/../img'));
+
 //메인페이지
 const mainRouter = require('./routes/mainRouter');
 app.use('/', mainRouter);
 
-//페이지 전환
-const pageRouter = require('./routes/pageRouter');
-app.use('/page', pageRouter);
 
 //비디오페이지
 const videoRouter = require('./routes/videoList');
