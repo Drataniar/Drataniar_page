@@ -1,10 +1,12 @@
 const mysql = require('mysql');
+require('dotenv').config();
 
 const connection = mysql.createConnection({
-  host: 'localhost',      // MySQL 서버 주소
-  user: 'root',        // MySQL 사용자명
-  password: 'root',    // MySQL 비밀번호
-  database: 'd_ark' // 사용할 데이터베이스명
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  port: process.env.DB_PORT
 });
 
 connection.connect((err) => {
