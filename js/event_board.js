@@ -1,6 +1,8 @@
 
 function loadEvents() {
-    fetch('http://localhost:3000/event/eventList')
+    fetch(`/event/eventList`
+
+    )
         .then(res => res.json())
         .then(data => {
             // end_date 기준 내림차순(가장 늦은 날짜가 위로)

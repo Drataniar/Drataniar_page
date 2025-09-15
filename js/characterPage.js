@@ -1,5 +1,6 @@
+    
 function makeRolesButton() {
-    fetch("http://localhost:3000/character/rolesBtn")
+    fetch(`/character/rolesBtn`)
         .then(res => res.json())
         .then(roles => {
             // sequence 기준 오름차순 정렬
@@ -56,7 +57,7 @@ function makeRolesButton() {
 }
 
 function makeRarityButton(role_name) {
-    fetch('http://localhost:3000/character/roleRarity', {
+    fetch(`/character/roleRarity`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role_name: role_name })
@@ -107,7 +108,7 @@ function makeRarityButton(role_name) {
 function makeCharacterButton(role_name, star) {
 
 
-    fetch('http://localhost:3000/character/btnList',{
+    fetch(`/character/btnList`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role_name: role_name, star: star })
@@ -150,7 +151,7 @@ function makeCharacterButton(role_name, star) {
 
 function loadCharacterImage(id) {
     //console.log(id);
-    fetch(`http://localhost:3000/character/picture`, {
+    fetch(`/character/picture`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }, //요청 데이터가 JSON임을 명시
            body: JSON.stringify({ id: id }) //id를 JSON 형태로 전송  

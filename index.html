@@ -22,6 +22,8 @@
         }
     </style>
     <script>
+        window.baseUrl = window.location.origin; 
+        console.log(window.baseUrl);
         // 2.5초간 점점 나타남
         const title = document.getElementById('fade-title');
         setTimeout(() => {

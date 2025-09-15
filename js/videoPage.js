@@ -1,9 +1,7 @@
 
-
-
 // 영상 목록 불러오기
 function loadVideos(searchText = '', option = '') {
-    let url = 'http://localhost:3000/video';
+    let url = `/video`;
     if (searchText) {
         url += `/search`;
          // POST 요청으로 body에 검색 종류와 내용 전달 후 결과 받기

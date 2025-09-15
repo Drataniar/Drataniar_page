@@ -35,7 +35,7 @@ videoBtn.addEventListener('click', function(){
     }
     else{
         // 1. 데이터베이스에서 스테이지 목록 받아오기
-    fetch("http://localhost:3000/video/stagesBtn")
+    fetch(`/video/stagesBtn`)
         .then(res => res.json())
         .then(stages => {
             console.log("Stages fetched:", stages);
