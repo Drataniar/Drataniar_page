@@ -1,55 +1,49 @@
 
-const connection = require('../mariadb');
+const db = require('../mariadb');
 
-const showVideoList = (req, res) => {
-    const sql = 'SELECT video.name, video.stage_ID, video.video_url, video.link_ID, stage_info.event_name, video.upload_date FROM video,stage_info WHERE video.stage_ID = stage_info.stage_ID'; //데이터베이스에서 검색
-    connection.query(sql, (err, results) => {
-        if (err) return res.status(500).json({ error: 'DB 오류' });
+const showVideoList = async (req, res) => {
+    try {
+        const sql = 'SELECT video.name, video.stage_ID, video.video_url, video.link_ID, stage_info.event_name, video.upload_date FROM video,stage_info WHERE video.stage_ID = stage_info.stage_ID';
+        const results = await db.query(sql);
         res.json(results);
-    });
-}
-
-const searchVideos = (req, res) => {    
-    const { option, searchText } = req.body;
-    let sql = 'SELECT video.name, video.stage_ID, video.video_url, video.link_ID, stage_info.event_name, video.upload_date FROM video,stage_info WHERE video.stage_ID = stage_info.stage_ID';
-    let params = [];
-
-    console.log(option, searchText);
-    console.log(option === 'stage');
-
-
-    if (option && searchText) {
-        if (option === 'name') {
-            sql += ' AND video.name LIKE ?';
-            console.log(sql);
-        } else if (option === 'stage') {
-            sql += ' AND video.stage_ID LIKE ?';
-            console.log(sql);
-        } else if (option === 'stage_KR') {
-            sql += ' AND stage_info.event_name LIKE ?';
-            console.log(sql);
-        }
-        params.push(`%${searchText}%`);
-        console.log(params);
+    } catch (err) {
+        res.status(500).json({ error: 'DB 오류', err });
     }
-
-    connection.query(sql, params, (err, results) => {
-        console.log(results);
-        if (err) return res.status(500).json({ error: 'DB 오류' });
-        res.json(results);
-    });
 }
 
+const searchVideos = async (req, res) => {
+    try {
+        const { option, searchText } = req.body;
+        let sql = 'SELECT video.name, video.stage_ID, video.video_url, video.link_ID, stage_info.event_name, video.upload_date FROM video,stage_info WHERE video.stage_ID = stage_info.stage_ID';
+        let params = [];
 
+        if (option && searchText) {
+            if (option === 'name') {
+                sql += ' AND video.name LIKE ?';
+            } else if (option === 'stage') {
+                sql += ' AND video.stage_ID LIKE ?';
+            } else if (option === 'stage_KR') {
+                sql += ' AND stage_info.event_name LIKE ?';
+            }
+            params.push(`%${searchText}%`);
+        }
 
-const getStages = (req, res) => {
-     const sql = 'SELECT stage_ID, event_name, release_date FROM stage_info'; //데이터베이스에서 검색
-    connection.query(sql, (err, results) => {
-        if (err) return res.status(500).json({ error: 'DB 오류' });
+        const results = await db.query(sql, params);
         res.json(results);
-    });
+    } catch (err) {
+        res.status(500).json({ error: 'DB 오류', err });
+    }
 }
 
+const getStages = async (req, res) => {
+    try {
+        const sql = 'SELECT stage_ID, event_name, release_date FROM stage_info';
+        const results = await db.query(sql);
+        res.json(results);
+    } catch (err) {
+        res.status(500).json({ error: 'DB 오류', err });
+    }
+}
 
 module.exports = {
     showVideoList,

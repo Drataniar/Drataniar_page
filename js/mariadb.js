@@ -1,23 +1,26 @@
-const mysql = require('mysql');
+const mariadb = require('mariadb');
 require('dotenv').config();
 
-const connection = mysql.createConnection({
+const pool = mariadb.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  port: process.env.DB_PORT
+  port: process.env.DB_PORT,
+  connectionLimit: 5
 });
 
-connection.connect((err) => {
-  if (err) {
-    console.error('MySQL 연결 실패:', err);
-    return;
+async function query(sql, params) {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const rows = await conn.query(sql, params);
+    return rows;
+  } catch (err) {
+    throw err;
+  } finally {
+    if (conn) conn.release();
   }
-  console.log('MySQL 연결 성공!');
-});
+}
 
-// 연결 종료는 connection.end() 사용
-
-module.exports = connection;
-// 다른 파일에서 사용할 때 사용합니다
+module.exports = { query };

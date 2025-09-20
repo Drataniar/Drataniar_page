@@ -29,3 +29,7 @@ app.use('/character',characterPageRouter);
 //이벤트페이지
 const eventPageRouter = require('./routes/eventPageRouter');
 app.use('/event', eventPageRouter);
+
+//공개모집 페이지
+const recruitRouter = require('./routes/recruitRouter');
+app.use('/recruit', recruitRouter);
